@@ -1,0 +1,35 @@
+### Headers settings
+company: Anvics
+
+### Xcode project settings
+project_name: TestAmber
+xcodeproj_path: TestAmber.xcodeproj
+
+### Code generation settings section
+# The main project target name
+project_target: TestAmber
+
+# The file path for new modules
+project_file_path: TestAmber/Amber/
+
+# The Xcode group path to new modules
+project_group_path: TestAmber/Amber/
+
+### Tests generation settings section
+# The tests target name
+test_target: TestAmberTests
+
+# The file path for new tests
+test_file_path: TestAmberTests/Amber/
+
+# The Xcode group path to new tests
+test_group_path: TestAmberTests/Amber/
+
+### Dependencies settings section
+podfile_path: podfile
+
+### Templates
+templates:
+- {name: rviper_controller}
+- {name: mvvm_controller}
+- {name: swifty_viper}

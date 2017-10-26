@@ -1,0 +1,36 @@
+//
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import XCTest
+import ReactiveKit
+
+class {{ module_info.name }}ReducerTests: XCTestCase{
+    
+    let store = SlideStore(reducer: {{ module_info.name }}Reducer(), router: {{ module_info.name }}Router(), requiredData: ())
+ 
+    func testAction() {
+        assert(<#action#>) { <#condition#> }
+    }
+
+    func assert(_ actions: {{ module_info.name }}Action..., meetsCondition: ({{ module_info.name }}State) -> Bool){
+        actions.forEach(store.perform)
+        XCTAssert(meetsCondition(store.currentState()))
+    }
+    
+    func assert(timeOut: TimeInterval, actions: {{ module_info.name }}Action..., meetsCondition: @escaping ({{ module_info.name }}State) -> Bool){
+        let expect = expectation(description: "{{ module_info.name }}Test expectation for \(actions)")
+        actions.forEach(store.perform)
+        waitForExpectations(timeout: timeOut, handler: nil)
+        let bag = DisposeBag()
+        store.state.observeNext { state in
+            if meetsCondition(state) { expect.fulfill() }
+            bag.dispose()
+        }.dispose(in: bag)
+    }
+
+}

@@ -1,0 +1,45 @@
+//
+//  {{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+import Bond
+import Amber
+//import Animatics
+//import AnimaticsBond
+
+let {{ module_info.name }}Module = {{ module_info.name }}Controller.self
+
+final class {{ module_info.name }}Controller: UIViewController, AmberController {
+
+    let store = AmberStore(reducer: {{ module_info.name }}Reducer(), router: {{ module_info.name }}Router())
+
+    static let storyboardFile = "Main"
+    static let storyboardID = "{{ module_info.name }}Controller"
+
+    //MARK: - IBOutlets
+
+    //MARK: - Life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+
+    //MARK: - IBActions
+
+}
+
+//MARK: - Bindings
+extension {{ module_info.name }}Controller{
+
+}
+
+//MARK: - Helpers
+extension {{ module_info.name }}Controller{
+
+}
+

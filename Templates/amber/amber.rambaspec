@@ -1,0 +1,32 @@
+# Template information section
+name: "amber"
+summary: "Swift Amber module template"
+author: "Arkhipov Nikita"
+version: "1.0.0"
+license: "MIT"
+
+# The declarations for code files
+
+code_files:
+
+# State layer
+- {name: State.swift, path: Code/State/state.swift.liquid}
+
+# Actions And Transitions layer
+- {name: Events.swift, path: Code/Events/events.swift.liquid}
+
+# Reducer layer
+- {name: Reducer.swift, path: Code/Reducer/reducer.swift.liquid}
+
+# Router layer
+- {name: Router.swift, path: Code/Router/router.swift.liquid}
+
+# View layer
+- {name: Controller.swift, path: Code/View/controller.swift.liquid}
+
+# Animation layer
+- {name: Animator.swift, path: Code/Animator/animator.swift.liquid}
+
+# The declarations for test files
+test_files:
+- {name: ReducerTests.swift, path: Code/Reducer/reducerTests.swift.liquid}
